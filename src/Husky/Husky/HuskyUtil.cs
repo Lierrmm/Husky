@@ -50,6 +50,8 @@ namespace Husky
             // Call of Duty: Modern Warfare 2
             { "iw4mp",              new GameDefinition(0x6F81D0,          0x6F7F08,       "mp",               ModernWarfare2.ExportBSPData) },
             { "iw4sp",              new GameDefinition(0x7307F8,          0x730510,       "sp",               ModernWarfare2.ExportBSPData) },
+            //IW4X
+            { "iw4x",               new GameDefinition(0x7998A8,          0x7995E8,       "mp",               IW4X.ExportBSPData) },
             // Call of Duty: Modern Warfare 3
             { "iw5mp",              new GameDefinition(0x8AB258,          0x8AAF78,       "mp",               ModernWarfare3.ExportBSPData) },
             { "iw5sp",              new GameDefinition(0x92AD20,          0x92AA40,       "sp",               ModernWarfare3.ExportBSPData) },
@@ -74,6 +76,8 @@ namespace Husky
             // Call of Duty: Modern Warfare Remastered
             { "h1_mp64_ship",       new GameDefinition(0x10B4460,         0x10B3C80,      "mp",               ModernWarfareRM.ExportBSPData) },
             { "h1_sp64_ship",       new GameDefinition(0xEC9FB0,          0xEC97D0,       "sp",               ModernWarfareRM.ExportBSPData) },
+            // Call of Duty: Modern Warfare 2 Campaign Remastered
+            { "MW2CR",              new GameDefinition(0xEC9FB0,          0xEC97D0,       "sp",               ModernWarfare2RM.ExportBSPData) },
         };
 
         /// <summary>

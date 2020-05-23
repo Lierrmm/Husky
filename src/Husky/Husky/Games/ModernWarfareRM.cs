@@ -271,7 +271,10 @@ namespace Husky
             printCallback?.Invoke("Found supported game: Call of Duty: Modern Warfare Remastered");
 
             // Validate by XModel Name
-            if (reader.ReadNullTerminatedString(reader.ReadInt64(reader.ReadInt64(reader.GetBaseAddress() + assetPoolsAddress + 0x38) + 8)) == "fx")
+            var baseAddr = reader.GetBaseAddress();
+            var si = reader.ReadInt64(reader.ReadInt64(baseAddr + assetPoolsAddress + 0x38) + 8);
+            var po = reader.ReadNullTerminatedString(si) == "fx";
+            if (po)
             {
                 // Load BSP Pools (they only have a size of 1 so we don't care about reading more than 1)
                 var gfxMapAsset = reader.ReadStruct<GfxMap>(reader.ReadInt64(reader.GetBaseAddress() + assetPoolsAddress + 0xF8));

@@ -41,7 +41,7 @@ namespace HuskyUI
         {
             InitializeComponent();
             // Set title
-            Title = String.Format("Husky - Version {0}", Assembly.GetExecutingAssembly().GetName().Version);
+            Title = $"Husky - Version {Assembly.GetExecutingAssembly().GetName().Version}";
             // Initial Print
             PrintLine("Load a supported CoD Game, then click the paper plane to export loaded BSP data.");
             PrintLine("");
@@ -87,11 +87,11 @@ namespace HuskyUI
         /// </summary>
         private void AboutClick(object sender, RoutedEventArgs e)
         {
-            AboutWindow aboutWindow = new AboutWindow()
+            var aboutWindow = new AboutWindow
             {
-                Owner = this
+                Owner = this,
+                VersionLabel = {Content = $"Version: {Assembly.GetExecutingAssembly().GetName().Version}"}
             };
-            aboutWindow.VersionLabel.Content = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version);
             DimBox.Visibility = Visibility.Visible;
             aboutWindow.ShowDialog();
             DimBox.Visibility = Visibility.Hidden;

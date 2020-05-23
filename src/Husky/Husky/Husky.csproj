@@ -64,6 +64,8 @@
     <Compile Include="GameStructures\Shared.cs" />
     <Compile Include="Games\BlackOps2.cs" />
     <Compile Include="Games\Ghosts.cs" />
+    <Compile Include="Games\IW4X.cs" />
+    <Compile Include="Games\ModernWarfare2RM.cs" />
     <Compile Include="Games\WorldWarII.cs" />
     <Compile Include="Games\ModernWarfare3.cs" />
     <Compile Include="Games\ModernWarfare2.cs" />
@@ -98,7 +100,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.3.1.6\build\Costura.Fody.props'))" />
-    <Error Condition="!Exists('..\packages\Fody.3.3.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.3.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.3.2.12\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.3.2.12\build\Fody.targets'))" />
   </Target>
-  <Import Project="..\packages\Fody.3.3.1\build\Fody.targets" Condition="Exists('..\packages\Fody.3.3.1\build\Fody.targets')" />
+  <Import Project="..\packages\Fody.3.2.12\build\Fody.targets" Condition="Exists('..\packages\Fody.3.2.12\build\Fody.targets')" />
 </Project>

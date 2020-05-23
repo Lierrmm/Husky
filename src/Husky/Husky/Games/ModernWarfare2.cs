@@ -198,6 +198,14 @@ namespace Husky
             // Found her
             printCallback?.Invoke("Found supported game: Call of Duty: Modern Warfare 2");
             // Validate by XModel Name
+            printCallback?.Invoke($"AssetPools Address: {assetPoolsAddress}");
+            for (var i = 4; i < 0xFFF; i+=4)
+            {
+                var math = $"{reader.ReadInt32(reader.ReadInt32(assetPoolsAddress + 0x10) + i)}";
+                var str = reader.ReadNullTerminatedString(reader.ReadInt32(reader.ReadInt32(assetPoolsAddress) + i));
+                printCallback?.Invoke($"Math Check: {math}");
+                printCallback?.Invoke($"String Check: {str}");
+            }
             if (reader.ReadNullTerminatedString(reader.ReadInt32(reader.ReadInt32(assetPoolsAddress + 0x10) + 4)) == "void")
             {
                 // Load BSP Pools (they only have a size of 1 so we have no free header)
